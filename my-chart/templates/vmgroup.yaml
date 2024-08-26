@@ -1,0 +1,18 @@
+{{- $root := . }}
+{{- range $groupIndex, $group := .Values.vmGroups }}
+{{- range $i := until (int $group.count) }}
+apiVersion: v1
+kind: Pod
+metadata:
+  name: {{ $group.name }}-{{ printf "%02d" (add $i 1) }}
+spec:
+  containers:
+  - name: {{ $group.name }}-{{ printf "%02d" (add $i 1) }}
+    image: "{{ $group.image }}"
+    resources:
+      requests:
+        memory: "{{ $group.memory }}"
+        cpu: "{{ $group.cpu }}"
+---
+{{- end }}
+{{- end }}
