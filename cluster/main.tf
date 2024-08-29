@@ -32,7 +32,7 @@ resource "civo_instance" "main" {
   firewall_id = var.firewall
   network_id  = var.network
   sshkey_id   = var.ssh
-  size       = "g4s.large"
+  size       = "g4s.medium"
   disk_image = data.civo_disk_image.ubuntu.diskimages[0].id
 }
 
@@ -44,7 +44,7 @@ resource "civo_instance" "node1" {
   firewall_id = var.firewall
   network_id  = var.network
   sshkey_id   = var.ssh
-  size       = "g4s.large"
+  size       = "g4s.medium"
   disk_image = data.civo_disk_image.ubuntu.diskimages[0].id
 }
 
@@ -56,7 +56,7 @@ resource "civo_instance" "node2" {
   firewall_id = var.firewall
   network_id  = var.network
   sshkey_id   = var.ssh
-  size       = "g4s.large"
+  size       = "g4s.medium"
   disk_image = data.civo_disk_image.ubuntu.diskimages[0].id
 }
 

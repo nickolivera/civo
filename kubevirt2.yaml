@@ -17,7 +17,7 @@ spec:
         resources:
           requests:
             storage: 2Gi
-        # storageClassName: local
+        storageClassName: local-path
       source:
         http:
           url: http://archive.ubuntu.com/ubuntu/dists/trusty/main/installer-amd64/current/images/netboot/mini.iso
