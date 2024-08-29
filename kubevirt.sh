@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Point at latest release
-export RELEASE="v1.3.1"
+export RELEASE=$(curl https://storage.googleapis.com/kubevirt-prow/release/kubevirt/kubevirt/stable.txt)
 #kubectl krew install virt
 # Deploy the KubeVirt operator
 kubectl apply -f https://github.com/kubevirt/kubevirt/releases/download/${RELEASE}/kubevirt-operator.yaml
